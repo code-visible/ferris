@@ -1,5 +1,8 @@
-pub struct SourcePkg {
-    id: String,
-    name: String,
-    path: String,
+use serde::Serialize;
+
+#[derive(Serialize)]
+pub struct SourcePkg<'a> {
+    pub id: &'a str,
+    pub name: &'a str,
+    pub path: &'a str,
 }
